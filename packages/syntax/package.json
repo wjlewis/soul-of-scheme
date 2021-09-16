@@ -1,7 +1,7 @@
 {
-  "name": "soul-of-scheme",
+  "name": "@soul-of-scheme/syntax",
   "version": "0.0.1",
-  "description": "Resources for working with the Scheme programming language",
+  "description": "A parser for s-expressions and Scheme expressions",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
