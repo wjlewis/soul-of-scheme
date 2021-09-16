@@ -3,7 +3,8 @@
     "target": "es5",
     "strict": true,
     "declaration": true,
-    "outDir": "build"
+    "outDir": "build",
+    "strictPropertyInitialization": false
   },
   "include": ["lib"],
   "exclude": ["lib/**/__tests__/**/*.ts"]

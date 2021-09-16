@@ -15,7 +15,7 @@ describe('Lexer', () => {
     });
 
     test('Punctuation (1)', () => {
-      const source = ", ,@ . ... ..1 .. '`";
+      const source = ", ,@ . ... ..1 .. '` ..134";
       const ts = tokens(source);
 
       expect(ts).toEqual([
@@ -23,11 +23,12 @@ describe('Lexer', () => {
         new Token(Tk.CommaAt, ',@'),
         new Token(Tk.Dot, '.'),
         new Token(Tk.Ellipsis, '...'),
-        new Token(Tk.Ellipsis1, '..1'),
+        new Token(Tk.Ellipsis, '..1'),
         new Token(Tk.Dot, '.'),
         new Token(Tk.Dot, '.'),
         new Token(Tk.Quote, "'"),
         new Token(Tk.Backtick, '`'),
+        new Token(Tk.Ellipsis, '..134'),
       ]);
     });
   });

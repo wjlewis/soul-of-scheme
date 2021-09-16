@@ -69,12 +69,17 @@ export class Lexer {
 
       kind = TokenKind.Number;
     } else if (c === '.') {
-      if (this.source.slice(this.pos).startsWith('..')) {
-        this.pos += 2;
+      if (/^\.(\.|\d+)/.test(this.source.slice(this.pos))) {
+        // Skip past first '.'
+        this.pos++;
+
+        if (this.source[this.pos] === '.') {
+          this.pos++;
+        } else {
+          this.skipWhile(isDigit);
+        }
+
         kind = TokenKind.Ellipsis;
-      } else if (this.source.slice(this.pos).startsWith('.1')) {
-        this.pos += 2;
-        kind = TokenKind.Ellipsis1;
       } else {
         kind = TokenKind.Dot;
       }
@@ -153,7 +158,6 @@ export enum TokenKind {
   RBracket = 'RBracket',
   Dot = 'Dot',
   Ellipsis = 'Ellipsis',
-  Ellipsis1 = 'Ellipsis1',
   Quote = 'Quote',
   Backtick = 'Backtick',
   Comma = 'Comma',

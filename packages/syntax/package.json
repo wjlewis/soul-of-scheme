@@ -1,7 +1,7 @@
 {
   "name": "@soul-of-scheme/syntax",
   "version": "0.0.1",
-  "description": "A parser for s-expressions and Scheme expressions",
+  "description": "A parser and accompanying tools for working with S-Expressions",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
@@ -16,6 +16,7 @@
     "jest": "^27.1.0",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
     "typescript": "^4.4.2"
   }
 }
